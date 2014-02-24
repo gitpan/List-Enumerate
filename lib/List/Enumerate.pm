@@ -10,7 +10,7 @@ use strict;
 use warnings;
 use Exporter;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 our @ISA     = qw(Exporter);
 our @EXPORT  = qw(enumerate);
 
@@ -29,8 +29,19 @@ sub new {
    return bless [@_], $class;
 }
 
-sub index { return shift->[0] }
-sub item  { return shift->[1] }
+#-------------------------------------------------------------------------------
+#   Subroutine : index
+#
+#   Output     : The index position in relation to original enumerate list
+#-------------------------------------------------------------------------------
+sub index { return $_[0]->[0] }
+
+#-------------------------------------------------------------------------------
+#   Subroutine : item
+#
+#   Output     : The item, as per the original enumerate list
+#-------------------------------------------------------------------------------
+sub item { return $_[0]->[1] }
 
 #-------------------------------------------------------------------------------
 #   Subroutine : enumerate
@@ -89,7 +100,7 @@ List::Enumerate - Provides list enumeration
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -119,11 +130,11 @@ Returns a list of List::Enumerate objects when called with a list
 
 =head2 index
 
-List::Enumerate call, Returns the index position
+List::Enumerate call, returns the index position
 
 =head2 item
 
-List::Enumerate call, Returns the item
+List::Enumerate call, returns the item
 
 =head2 new
 
