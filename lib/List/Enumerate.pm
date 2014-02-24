@@ -10,7 +10,7 @@ use strict;
 use warnings;
 use Exporter;
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 our @ISA     = qw(Exporter);
 our @EXPORT  = qw(enumerate);
 
@@ -100,7 +100,7 @@ List::Enumerate - Provides list enumeration
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -118,7 +118,7 @@ Instead of
 
   my $count = 0;
   for my $entry ( @list ) {
-     print $entry, " ", $count, "\n";
+     print $count, " ", $entry, "\n";
      $count++;
   }
 
