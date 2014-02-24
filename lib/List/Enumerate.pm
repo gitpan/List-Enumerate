@@ -10,7 +10,7 @@ use strict;
 use warnings;
 use Exporter;
 
-our $VERSION = '0.003';
+our $VERSION = '0.004';
 our @ISA     = qw(Exporter);
 our @EXPORT  = qw(enumerate);
 
@@ -71,15 +71,15 @@ sub run {
    my @list = qw(Larry Moe Curly);
 
    # With enumerate
-   for my $enum ( enumerate(@list) ) {
-      print $enum->index, " ", $enum->item, "\n";
+   for my $name ( enumerate(@list) ) {
+      print $name->index, " ", $name->item, "\n";
    }
 
    # Without enumerate
-   my $count = 0;
-   for my $entry (@list) {
-      print $count, " ", $entry, "\n";
-      $count++;
+   my $index = 0;
+   for my $name (@list) {
+      print $index, " ", $name, "\n";
+      $index++;
    }
 
 }
@@ -100,7 +100,7 @@ List::Enumerate - Provides list enumeration
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 
@@ -108,18 +108,18 @@ Provides a simple means of list enumeration.
 
   my @list = qw(Larry Moe Curly);
 
-  for my $enum ( enumerate(@list) ) {
-    print $enum->index, " ", $enum->item, "\n";
+  for my $name ( enumerate(@list) ) {
+    print $name->index, " ", $name->item, "\n";
   }
 
 Instead of
 
   my @list = qw(Larry Moe Curly);
 
-  my $count = 0;
-  for my $entry ( @list ) {
-     print $count, " ", $entry, "\n";
-     $count++;
+  my $index = 0;
+  for my $name ( @list ) {
+     print $index, " ", $name, "\n";
+     $index++;
   }
 
 =head1 METHODS
