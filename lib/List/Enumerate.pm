@@ -10,14 +10,14 @@ use strict;
 use warnings;
 use Exporter;
 
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 our @ISA     = qw(Exporter);
 our @EXPORT  = qw(enumerate);
 
 #-------------------------------------------------------------------------------
 #   Call the run method if the module was called as a script
 #-------------------------------------------------------------------------------
-__PACKAGE__->run unless caller();
+__PACKAGE__->_run unless caller();
 
 #-------------------------------------------------------------------------------
 #   Constructor
@@ -65,7 +65,7 @@ sub enumerate {
 #
 #   Purpose    : Testing subroutine
 #-------------------------------------------------------------------------------
-sub run {
+sub _run {
 
    # Basic List
    my @list = qw(Larry Moe Curly);
@@ -100,7 +100,7 @@ List::Enumerate - Provides list enumeration
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -139,10 +139,6 @@ List::Enumerate call, returns the item
 =head2 new
 
 Constructor for List::Enumerate, used internally
-
-=head2 run
-
-Used for internal testing when package is run as a script
 
 =head1 AUTHOR
 
